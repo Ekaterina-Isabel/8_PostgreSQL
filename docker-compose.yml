@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:12-alpine
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./data:/var/lib/postgresql
+    environment:
+      POSTGRES_RANDOM_ROOT_PASSWORD: "yes"
+      POSTGRES_DATABASE: db
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: password
